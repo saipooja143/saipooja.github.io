@@ -1,0 +1,86 @@
+Program 2
+Create and implement modules and controllers in AngularJS
+To create module execute the command
+•	ng g m test
+•	test module is created
+To create component in test module(newly created module)
+command is
+•	ng g c test/test2 –module=test
+•	test2 component is created in test module
+•	
+  Appcomponet.html
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Logo</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">REGISTER</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">LOGIN</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+<H1>This is from Appmodlue</H1> 
+</div>
+</div>
+<app-test2></app-test2>
+
+App.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { TestModule } from './test/test.module';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TestModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+test.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Test2Component } from './test2/test2.component';
+
+
+@NgModule({
+  declarations: [
+    Test2Component
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [
+    Test2Component
+  ]
+})
+export class TestModule { }
+test2.component.html
+<h1>This is from Test modlue</h1>
+
