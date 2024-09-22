@@ -1,70 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket Management System</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h1>Portfolio</h1>
-        <p>Hi! I'm chinthakindi saipooja </p>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        
-        <p>I'm a beginner web developer passionate about coding and learning new technologies. I enjoy creating simple, user-friendly websites using HTML, CSS, and JavaScript. My goal is to keep improving and work on exciting projects</p>
-    </section>
+<div class="background-img">
+<div class="ticket-section">
+    <form id="ticket-form">
+        <h2>Ticket Management System</h2>
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="text" id="seat" placeholder="Seat No" required><br>
+        <input type="date" id="date" required><br>
+        <input type="text" id="from" placeholder="From Location" required><br>
+        <input type="text" id="to" placeholder="To Location" required><br>
+        <input type="submit" value="Book Ticket">
+    </form>
+    <button id="view-history-btn">View History</button>
+</div>
+</div>
+<div id="ticket-history" style="display: none;">
+    <h3>Ticket History</h3>
+    <table id="history-table">
+        <thead>
+            <tr>
+                <th>Ticket ID</th>
+                <th>Name</th>
+                <th>Seat No</th>
+                <th>Date</th>
+                <th>From Location</th>
+                <th>To Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="history-table-body">
 
-    <section id="skills">
-        <h2>python</h2>
-        <div class="skills">
-            
-            <p>I'm good at python coding</p>
-        </div>
-        <div class="skills">
-            <h3>HTML,CSS,JavaScript</h3>
-            <p>I'm beginner in html, css and JavaScript</p>
-        </div>
-        <div class="skills">
-            <h3>C language </h3>
-            <p>I'm good at c and c++</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 My Portfolio</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+        </tbody>
+    </table>
+</div> <script src="script.js" defer data-deferred="1"></script> </body>
 </html>
